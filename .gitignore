@@ -1,5 +1,10 @@
 *.parquet
 *.json
+terraform/.terraform/
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
 
 # Python-generated files
 __pycache__/
@@ -11,3 +16,4 @@ wheels/
 
 # Virtual environments
 .venv
+
