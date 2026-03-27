@@ -14,8 +14,8 @@ provider "google" {
 }
 
 resource "google_storage_bucket" "terra-bucket" {
-  name          = "project-bee6fd45-a594-4900-b80"
-  location      = "US"
+  name          = var.gcs_bucket_name
+  location      = var.location
   force_destroy = true
 
     uniform_bucket_level_access = true
@@ -31,5 +31,6 @@ resource "google_storage_bucket" "terra-bucket" {
 }
 
 resource "google_bigquery_dataset" "terradataset" {
-  dataset_id = "example_dataset"
+  dataset_id = var.bq_dataset_name
+  location = var.location
 }
